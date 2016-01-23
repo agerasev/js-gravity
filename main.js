@@ -2,8 +2,8 @@ var App = {
 	canvas: null,
 	width: 300,
 	height: 150,
-	ticks: 0.0,
 	anim: false,
+	timer: null,
 }
 
 var Planet = {};
@@ -112,10 +112,6 @@ function solve(dt) {
 
 function render(ticks) {
 	//console.log("[info] render " + (ticks - App.ticks));
-	if(App.ticks < 0.0)
-		App.ticks = ticks;
-
-	solve(0.001*(ticks - App.ticks));
 
 	var ctx = App.canvas.getContext("2d");
 	ctx.fillStyle = "rgba(0,0,0,0.05)";
@@ -125,7 +121,6 @@ function render(ticks) {
 		drawPlanet(Planets[i]);
 	}
 
-	App.ticks = ticks;
 	if(App.anim)
 		window.requestAnimationFrame(render);
 }
@@ -134,6 +129,7 @@ function pause() {
 	console.log("[info] pause");
 
 	App.anim = false;
+	clearInterval(App.timer);
 
 	var bp = $("#button_pause");
 	bp.html("Resume");
@@ -145,8 +141,8 @@ function resume() {
 	console.log("[info] resume");
 
 	App.anim = true;
-	App.ticks = -1.0;
 	window.requestAnimationFrame(render);
+	App.timer = setInterval(function(){solve(0.02);}, 20);
 
 	var bp = $("#button_pause");
 	bp.html("Pause");
