@@ -1,0 +1,27 @@
+html {
+	margin: 0;
+	padding: 0;
+	font-family: "dejavu sans", sans-serif;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #000000;
+}
+
+.viewport {
+	top: 0;
+	left: 0;
+	position: fixed;
+}
+
+.button {
+	padding: 4px;
+	position: absolute;
+	display: inline-block;
+	font-size: 24px;
+	color: #000000;
+	background-color: #FF7700;
+	cursor: pointer;
+}
