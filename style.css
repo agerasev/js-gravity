@@ -1,7 +1,7 @@
 html {
 	margin: 0;
 	padding: 0;
-	font-family: "dejavu sans", sans-serif;
+	font-family: "droid sans", "dejavu sans", sans-serif;
 }
 
 body {
@@ -16,8 +16,9 @@ div {
 }
 
 input {
-	margin: 0;
-	padding: 0;
+	margin: 2px;
+	padding: 2px;
+	border: 1px solid #888888;
 }
 
 .viewport {
@@ -25,36 +26,35 @@ input {
 	left: 0;
 	position: fixed;
 	z-index: -1;
+	cursor: default;
 }
 
-.button {
+button {
 	margin: 2px;
 	padding: 4px;
-	display: inline-block;
 	font-size: 16px;
 	color: #000000;
 	background-color: #FF7700;
-	cursor: pointer;
+	border: 0;
+}
+
+button:active {
+	background-color: #FF4400;
 }
 
 .panel {
-	display: inline-block;
+	margin: 2px;
+	padding: 4px;
 	background-color: rgba(255,255,255,0.5);
+}
+
+#panel_main {
+	position: absolute;
+	margin: 0;
+	display: inline-block;
 }
 
 #button_pause {
 	position: absolute;
 	font-size: 24px;
-}
-
-#panel_main {
-	position: absolute;
-}
-
-#color_picker {
-	width: 32px;
-	height: 32px;
-	display: inline-block;
-	border: none;
-	background-color: rgba(0,0,0,0);
 }
