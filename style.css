@@ -10,18 +10,51 @@ body {
 	background-color: #000000;
 }
 
+div {
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	margin: 0;
+	padding: 0;
+}
+
 .viewport {
 	top: 0;
 	left: 0;
 	position: fixed;
+	z-index: -1;
 }
 
 .button {
+	margin: 2px;
 	padding: 4px;
-	position: absolute;
 	display: inline-block;
-	font-size: 24px;
+	font-size: 16px;
 	color: #000000;
 	background-color: #FF7700;
 	cursor: pointer;
+}
+
+.panel {
+	display: inline-block;
+	background-color: rgba(255,255,255,0.5);
+}
+
+#button_pause {
+	position: absolute;
+	font-size: 24px;
+}
+
+#panel_main {
+	position: absolute;
+}
+
+#color_picker {
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	border: none;
+	background-color: rgba(0,0,0,0);
 }

@@ -4,12 +4,18 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<title>JSGravity</title>
 	<link rel="stylesheet" href="style.css"/>
-	<script src="jquery.js"></script>
-	<script src="vec2.js"  ></script>
-	<script src="main.js"  ></script>
+	<script src="jquery.js" ></script>
+	<script src="vec2.js"   ></script>
+	<script src="physics.js"></script>
+	<script src="main.js"   ></script>
 </head>
 <body>
 <canvas class="viewport" id="canvas_main">Your browser does not support HTML5 Canvas</canvas>
-<div class="button" id="button_pause"></div>
+<div class="button" id="button_pause">Pause</div>
+<div class="panel" id="panel_main">
+	<!--input type="color" id="color_picker" value="#FFFFFF"><br/-->
+	<div class="button" id="button_momentum">Momentum = 0</div><br/>
+	<div class="button" id="button_barycenter">Barycenter = 0</div>
+</div>
 </body>
 </html>
