@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="style.css"/>
 	<script src="jquery.js" ></script>
 	<script src="vec2.js"   ></script>
+	<script src="bodies.js"></script>
 	<script src="physics.js"></script>
 	<script src="main.js"   ></script>
 </head>
@@ -13,11 +14,18 @@
 <canvas class="viewport" id="canvas_main">Your browser does not support HTML5 Canvas</canvas>
 <button id="button_pause">Pause</button>
 <div class="panel" id="panel_main">
-	<div class="panel">
-		Click on the screen to add new planet<br/>
+	<div class="panel" style="margin-bottom: 4px;">
+		Click on the screen to add new body<br/>
 		Drag while clicking to set the velocity<br/>
-		Mass:  <input type="text" id="input_mass" value="100" style="width:96px;">
-		Color: <input type="color" id="input_color" value="#FFFFFF">
+		Mass:  <input type="text" id="input_mass" value="100" style="width:96px;"/>
+		Color: <input type="color" id="input_color" value="#FFFFFF"/>
+	</div>
+	<div class="panel">
+		<input type="checkbox" id="flag_track" checked="checked"/>Draw track. 
+		Opacity: <input type="text" id="input_track_opacity" value="0.05" style="width:48px;"/>
+	</div>
+	<div class="panel">
+		<input type="checkbox" id="flag_borders"/>Enable borders
 	</div>
 	<button id="button_momentum">Momentum = 0</button>
 	<button id="button_barycenter">Barycenter = 0</button>
