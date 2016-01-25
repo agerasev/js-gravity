@@ -122,18 +122,33 @@ function ready() {
 	App.canvas = document.getElementById("canvas_main");
 	$("#canvas_main")
 	.mousedown(function(e) {
-		App.pre_pos = pageToWorld(Vec2.create(e.pageX, e.pageY));
-		App.draw_path = true;
+		if(e.which == 1) { // LMB
+			App.pre_pos = pageToWorld(Vec2.create(e.pageX, e.pageY));
+			App.draw_path = true;
+		} else if(e.which == 2) { //MMB
+			var mp = pageToWorld(Vec2.create(e.pageX, e.pageY));
+			for(var i = 0; i < Bodies.length; ++i) {
+				var p = Bodies[i];
+				var d = Vec2.sub(p.pos, mp);
+				var er = 32.0 + p.rad; //error radius, px
+				if(Vec2.dot(d,d) < er*er) {
+					Bodies.splice(i,1);
+					--i;
+				}
+			}
+		}
 		e.preventDefault();
 	})
 	.mouseup(function(e) {
-		var end = pageToWorld(Vec2.create(e.pageX, e.pageY));
-		App.pre_vel = Vec2.sub(end, App.pre_pos);
-		var p = getNewBody();
-		if(p != null)
-			Bodies[Bodies.length] = p;
-		App.draw_path = false;
-		App.pre_pos = null;
+		if(App.pre_pos != null) {
+			var end = pageToWorld(Vec2.create(e.pageX, e.pageY));
+			App.pre_vel = Vec2.sub(end, App.pre_pos);
+			var p = getNewBody();
+			if(p != null)
+				Bodies[Bodies.length] = p;
+			App.draw_path = false;
+			App.pre_pos = null;
+		}
 	})
 	.mousemove(function(e) {
 		if(App.pre_pos != null) {
