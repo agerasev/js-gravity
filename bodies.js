@@ -23,6 +23,8 @@ var Body = {
 }
 
 var Bodies = [
-	Body.create(8000, Vec2.create(0,0), Vec2.create(0,-1)),
-	Body.create(125, Vec2.create(-300, 0), Vec2.create(0,64), "#00AA00"),
+	Body.create(100000, Vec2.create(0,0), Vec2.create(0,0), "#FFFF00"),
+	Body.create(200, Vec2.create(100, 0), Vec2.create(0,-300), "#FF0000"),
+	Body.create(1000, Vec2.create(-400, 0), Vec2.create(0,150), "#00FF00"),
+	Body.create(100, Vec2.create(-400 + 40, 0), Vec2.create(0,150 + 54), "#0000FF"),
 ];

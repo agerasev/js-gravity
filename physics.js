@@ -1,5 +1,5 @@
 var Physics = {
-	G:  4e2,
+	G:  1e2,
 	EL: 1e5,
 
 	borders: {on: true, x: 300.0, y: 150.0},

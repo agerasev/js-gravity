@@ -179,6 +179,9 @@ function ready() {
 		Physics.zeroBarycenter();
 	});
 
+	Physics.zeroMomentum();
+	Physics.zeroBarycenter();
+
 	resize();
 
 	window.requestAnimationFrame(render);
